@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
-  const [activeLink, setActiveLink] = useState("#hero");
-
   return (
     <nav>
-      <a href="#">
+      <a href="/">
         <img
           src={`${process.env.PUBLIC_URL}/assets/logo.png`}
           alt="logo"
@@ -14,49 +13,44 @@ function NavBar() {
       </a>
       <ul className="navbar">
         <li>
-          <a
-            href="#hero"
-            className={activeLink === "#hero" ? "active" : ""}
-            onClick={() => setActiveLink("#hero")}
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             Home
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a
-            href="#services_section"
-            className={activeLink === "#services_section" ? "active" : ""}
-            onClick={() => setActiveLink("#services_section")}
+          <NavLink
+            to="/services"
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             Service
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a
-            href="#skills_section"
-            className={activeLink === "#skills_section" ? "active" : ""}
-            onClick={() => setActiveLink("#skills_section")}
+          <NavLink
+            to="/skills"
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             Skills
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a
-            href="#projects"
-            className={activeLink === "#projects" ? "active" : ""}
-            onClick={() => setActiveLink("#projects")}
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
             Projects
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a
-            href="#testimonials"
-            className={activeLink === "#testimonials" ? "active" : ""}
-            onClick={() => setActiveLink("#testimonials")}
+          <NavLink
+            to="/Resume"
+            className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Testimonials
-          </a>
+            Resume
+          </NavLink>
         </li>
         <li>
           <a
